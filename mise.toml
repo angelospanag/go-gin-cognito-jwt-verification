@@ -1,0 +1,35 @@
+[tools]
+go = "1.26.5"
+golangci-lint = "2.12.2"
+
+[tasks.dev]
+description = "🚀 Run the application in dev mode"
+run = "go run ./cmd/api"
+
+[tasks.build]
+description = "🔧 Build the Go binary"
+run = "go build -o ./bin/api ./cmd/api"
+
+[tasks.fmt]
+description = "✨ Format code with golangci-lint"
+run = "golangci-lint fmt"
+
+[tasks.lint]
+description = "🔍 Lint the codebase"
+run = "golangci-lint run ./..."
+
+[tasks.vuln]
+description = "🛡️ Scan dependencies for known vulnerabilities"
+run = "go tool govulncheck ./..."
+
+[tasks.test]
+description = "🧪 Run tests"
+run = "go test -v ./..."
+
+[tasks.deps]
+description = "📥 Update and tidy dependencies"
+run = ["go get -u ./...", "go mod tidy"]
+
+[tasks.clean]
+description = "🧹 Remove build artifacts"
+run = "rm -rf ./bin"

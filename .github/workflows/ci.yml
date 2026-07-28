@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: jdx/mise-action@v4
+
+      - name: Lint
+        run: mise run lint
+
+      - name: Vulnerability audit
+        run: mise run vuln
+
+      - name: Run tests
+        run: mise run test
