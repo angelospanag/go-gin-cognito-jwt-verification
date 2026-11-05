@@ -4,7 +4,7 @@ A Go/Gin application demonstrating Cognito JWT verification middleware. Incoming
 
 ## Getting Started
 
-[mise](https://mise.jdx.dev/) manages the pinned toolchain (Go 1.26, golangci-lint).
+[mise](https://mise.jdx.dev/) manages the pinned toolchain (Go 1.27, golangci-lint).
 
 ```bash
 # macOS / Linux
@@ -40,6 +40,8 @@ Start the server:
 ```bash
 mise run dev
 ```
+
+The server listens on http://localhost:8080 (set `PORT` to change it).
 
 ## Routes
 
